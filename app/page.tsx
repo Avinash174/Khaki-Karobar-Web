@@ -33,7 +33,7 @@ export default function WebsiteHomePage() {
             </div>
             <div>
               <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
-                KHAKI <span className="text-red-600">KAROBARI</span>
+                Khaki <span className="text-red-600">Karobar</span>
               </span>
               <p className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-mono">
                 By Khaki KrypTech
@@ -200,7 +200,7 @@ export default function WebsiteHomePage() {
               href="http://localhost:3000"
               className="px-8 py-4 bg-white text-slate-900 font-extrabold text-sm rounded-xl shadow-xl hover:bg-slate-100 transition-all flex items-center gap-2"
             >
-              <span>Get Started with Khaki Karobari</span>
+              <span>Get Started with Khaki Karobar</span>
               <ArrowRight className="w-4 h-4 text-red-600" />
             </a>
           </div>
@@ -222,7 +222,7 @@ export default function WebsiteHomePage() {
               </span>
             </div>
             <p className="text-slate-500 max-w-sm leading-relaxed">
-              Khaki Karobari is engineered by Khaki KrypTech (India) Pvt. Ltd., Pune, Maharashtra.
+              Khaki Karobar is engineered by Khaki KrypTech (India) Pvt. Ltd., Pune, Maharashtra.
               A unified operating system for Indian business billing, accounting, and compliance.
             </p>
           </div>

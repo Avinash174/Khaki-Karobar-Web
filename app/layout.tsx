@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Khaki Karobari — Modern Business ERP & GST Billing',
+  title: 'Khaki Karobar — Modern Business ERP & GST Billing',
   description: 'Billing, Inventory, Accounting, GST & Business Operations by Khaki KrypTech (India) Pvt. Ltd.',
 };
 

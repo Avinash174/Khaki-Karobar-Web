@@ -44,7 +44,7 @@ export function ConsultationForm() {
               <div className="w-8 h-8 rounded-xl bg-red-500/10 text-red-600 flex items-center justify-center shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
-              <span>contact@khaki.com • support@khakikarobari.in</span>
+              <span>contact@khaki.com • support@khakikarobar.in</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-xl bg-red-500/10 text-red-600 flex items-center justify-center shrink-0">
@@ -66,7 +66,7 @@ export function ConsultationForm() {
                 Request Submitted Successfully!
               </h3>
               <p className="text-xs text-slate-500 max-w-xs mx-auto">
-                Our Khaki Karobari specialist will connect with you on WhatsApp within 15 minutes.
+                Our Khaki Karobar specialist will connect with you on WhatsApp within 15 minutes.
               </p>
             </div>
           ) : (

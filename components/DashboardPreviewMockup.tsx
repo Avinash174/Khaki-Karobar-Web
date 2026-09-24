@@ -22,7 +22,7 @@ export function DashboardPreviewMockup() {
           <div className="w-3 h-3 rounded-full bg-rose-500" />
           <div className="w-3 h-3 rounded-full bg-amber-500" />
           <div className="w-3 h-3 rounded-full bg-emerald-500" />
-          <span className="ml-2 text-[11px] font-mono text-slate-400">app.khakikarobari.in</span>
+          <span className="ml-2 text-[11px] font-mono text-slate-400">app.khakikarobar.in</span>
         </div>
 
         <div className="flex items-center gap-2">
