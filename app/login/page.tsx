@@ -33,9 +33,13 @@ export default function LoginPage() {
 
       <main className="flex-1 flex items-center justify-center py-16 px-4 sm:px-6">
         <div className="w-full max-w-md space-y-6">
-          <div className="text-center space-y-2">
-            <div className="w-12 h-12 bg-red-600 rounded-2xl flex items-center justify-center font-black text-white text-2xl shadow-xl shadow-red-600/30 mx-auto">
-              K
+          <div className="text-center space-y-3">
+            <div className="bg-white px-3.5 py-1.5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-md inline-block mx-auto">
+              <img
+                src="/logo.png"
+                alt="Khaki Karobar"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <h1 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
               Sign In to Khaki Karobar

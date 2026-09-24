@@ -9,13 +9,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 text-left">
         {/* Brand Column (2 cols) */}
         <div className="col-span-2 space-y-4">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center font-black text-white text-sm shadow-sm group-hover:scale-105 transition-transform">
-              K
+          <Link href="/" className="inline-block group">
+            <div className="bg-white px-3 py-1.5 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-xs inline-flex items-center group-hover:border-red-200 transition-colors">
+              <img
+                src="/logo.png"
+                alt="Khaki Karobar"
+                className="h-8 w-auto max-w-[180px] object-contain"
+              />
             </div>
-            <span className="font-extrabold text-slate-900 dark:text-white text-base">
-              Khaki <span className="text-red-600">Karobar</span>
-            </span>
           </Link>
           <p className="text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed text-xs">
             Smart business management for modern businesses. Engineered by Khaki KrypTech (India) Pvt. Ltd., Baner, Pune, Maharashtra.

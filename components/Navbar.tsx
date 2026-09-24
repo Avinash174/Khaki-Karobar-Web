@@ -45,17 +45,13 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         {/* Brand Logo & Name */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition-transform">
-            <span className="text-white font-black text-2xl tracking-wider">K</span>
-          </div>
-          <div>
-            <span className="font-black text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
-              Khaki <span className="text-red-600">Karobar</span>
-            </span>
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wide">
-              Smart Business Management
-            </p>
+        <Link href="/" className="flex items-center group">
+          <div className="bg-white px-3 py-1.5 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center group-hover:border-red-200 transition-colors">
+            <img
+              src="/logo.png"
+              alt="Khaki Karobar"
+              className="h-9 w-auto max-w-[200px] object-contain"
+            />
           </div>
         </Link>
 
