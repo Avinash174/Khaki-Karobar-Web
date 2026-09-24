@@ -1,21 +1,51 @@
 'use client';
 
-import React from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export function PricingSection() {
+  const [annualBilling, setAnnualBilling] = useState(true);
+
   return (
-    <section id="pricing" className="py-24 px-6 max-w-6xl mx-auto space-y-12">
+    <section id="pricing" className="py-20 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto space-y-12">
       <div className="text-center space-y-3">
-        <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 dark:bg-red-950/60 px-3 py-1 rounded-full border border-red-200 dark:border-red-900">
-          Transparent Pricing
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-          Simple, Predictable Plans for Indian Enterprises
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 dark:bg-red-950/60 border border-red-200/80 dark:border-red-900 text-red-600 dark:text-red-400 text-xs font-bold shadow-sm">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Transparent Indian Pricing</span>
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+          Simple, Predictable Plans for Growing Businesses
         </h2>
-        <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
-          Start for free, then scale as your customer volume, staff, and multi-branch operations grow.
+
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+          Start with a 14-day free trial. No credit card required. Upgrade as your business expands.
         </p>
+
+        {/* Annual / Monthly Toggle */}
+        <div className="pt-2 flex items-center justify-center gap-3 text-xs font-bold">
+          <span className={!annualBilling ? 'text-slate-900 dark:text-white' : 'text-slate-500'}>
+            Monthly
+          </span>
+          <button
+            type="button"
+            onClick={() => setAnnualBilling(!annualBilling)}
+            className="w-12 h-6 rounded-full bg-slate-300 dark:bg-slate-700 p-0.5 transition-colors relative"
+          >
+            <div
+              className={`w-5 h-5 rounded-full bg-red-600 shadow-md transform transition-transform ${
+                annualBilling ? 'translate-x-6' : 'translate-x-0'
+              }`}
+            />
+          </button>
+          <span className={annualBilling ? 'text-slate-900 dark:text-white flex items-center gap-1.5' : 'text-slate-500'}>
+            <span>Annual</span>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 border border-emerald-200 dark:border-emerald-800">
+              Save 20%
+            </span>
+          </span>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
@@ -24,11 +54,13 @@ export function PricingSection() {
           <div className="space-y-4">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Starter Shop</span>
             <div className="flex items-baseline gap-1">
-              <span className="text-4xl font-black text-slate-900 dark:text-white font-mono">₹499</span>
+              <span className="text-4xl font-black text-slate-900 dark:text-white font-mono">
+                {annualBilling ? '₹399' : '₹499'}
+              </span>
               <span className="text-xs text-slate-400">/month</span>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-300">
-              For single-counter retail shops and small stores.
+              For single-counter retail shops and standalone local stores.
             </p>
             <ul className="text-xs space-y-3 text-slate-700 dark:text-slate-300 pt-4 border-t border-slate-100 dark:border-[#222E42]">
               <li className="flex items-center gap-2.5">
@@ -37,25 +69,25 @@ export function PricingSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Inventory up to 1,000 Products</span>
+                <span>Catalog up to 1,000 Products</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Mobile App Access (Flutter)</span>
+                <span>Mobile App Access (Android & iOS)</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Thermal & A4 Print Formats</span>
+                <span>Thermal Roll & A4 Print Formats</span>
               </li>
             </ul>
           </div>
 
-          <a
-            href="http://localhost:3000"
+          <Link
+            href="/register"
             className="w-full text-center py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs rounded-xl transition-all block"
           >
             Start 14-Day Free Trial
-          </a>
+          </Link>
         </div>
 
         {/* Plan 2: Business Pro (Featured in Brand Red) */}
@@ -67,7 +99,9 @@ export function PricingSection() {
           <div className="space-y-4">
             <span className="text-xs font-bold text-red-600 uppercase tracking-wider">Business Pro</span>
             <div className="flex items-baseline gap-1">
-              <span className="text-4xl font-black text-slate-900 dark:text-white font-mono">₹999</span>
+              <span className="text-4xl font-black text-slate-900 dark:text-white font-mono">
+                {annualBilling ? '₹799' : '₹999'}
+              </span>
               <span className="text-xs text-slate-400">/month</span>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-300">
@@ -80,7 +114,7 @@ export function PricingSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
-                <span>Official WhatsApp Cloud API Dispatch</span>
+                <span>WhatsApp Cloud API PDF Dispatch</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
@@ -92,18 +126,18 @@ export function PricingSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
-                <span>Double-Entry Day Book & P&L</span>
+                <span>Double-Entry Day Book & Live P&L</span>
               </li>
             </ul>
           </div>
 
-          <a
-            href="http://localhost:3000"
+          <Link
+            href="/register"
             className="w-full text-center py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-red-600/30 transition-all flex items-center justify-center gap-2 block"
           >
             <span>Upgrade to Pro Plan</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </Link>
         </div>
 
         {/* Plan 3: Enterprise */}
@@ -111,7 +145,9 @@ export function PricingSection() {
           <div className="space-y-4">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Enterprise Chain</span>
             <div className="flex items-baseline gap-1">
-              <span className="text-4xl font-black text-slate-900 dark:text-white font-mono">₹2,499</span>
+              <span className="text-4xl font-black text-slate-900 dark:text-white font-mono">
+                {annualBilling ? '₹1,999' : '₹2,499'}
+              </span>
               <span className="text-xs text-slate-400">/month</span>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-300">
@@ -124,11 +160,11 @@ export function PricingSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Dedicated CA Portal Access</span>
+                <span>Dedicated Chartered Accountant Portal</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Custom API & ERP Integrations</span>
+                <span>Custom API & Tally Prime Connector</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -137,12 +173,12 @@ export function PricingSection() {
             </ul>
           </div>
 
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="w-full text-center py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs rounded-xl transition-all block"
           >
             Contact Sales Team
-          </a>
+          </Link>
         </div>
       </div>
     </section>
